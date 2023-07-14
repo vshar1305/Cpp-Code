@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+
+int binarySeach(int arr[],int size,int key)
+{
+    int start=0;
+    int end=size-1;
+
+    int mid=start+(end-start)/2;
+    while(start<=end)
+    {
+        if(key==arr[mid])
+        {
+            return mid;
+        }
+        if(key>arr[mid])
+        {
+            start=mid+1;
+        }
+        else
+        {
+            end=mid-1;
+        }
+        mid =start+(end-start)/2;
+    }
+    return -1;
+}
+
+void input(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        cin>>arr[i];
+    }
+}
+
+int main()
+{
+    cout<<"Enter the size of an array"<<endl;
+    int size;
+    cin>>size;
+    cout<<"Enter an array"<<endl;
+    int arr[100];
+    input(arr,size);
+    cout<<"Enter the key you want to find"<<endl;
+    int key;
+    cin>>key;
+    cout<<"The given number is at index"<<" "<<binarySeach(arr,size,key)<<endl;
+
+}

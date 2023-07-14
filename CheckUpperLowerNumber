@@ -1,0 +1,20 @@
+// Your First C++ Program
+#include <iostream>
+using namespace std;
+int main() {
+    char a;
+    cout << "Enter Number from 0-9 or Alphabet from A-Z or a-z"<<endl;
+    cin>>a;
+     if(a>=65&&a<=90)
+    {
+        cout<<"The Alphabet is in upper case"<<endl;
+    }
+    else if (a>=97&&a<=122)
+    {
+        cout<<"The Alphabet is in lower case"<<endl;
+    }
+    else if (a>=48&&a<=57)
+    {
+        cout<<"The Entered number is between 0-9"<<endl;
+    }
+}

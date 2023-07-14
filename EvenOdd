@@ -1,0 +1,31 @@
+#include<iostream>
+using namespace std;
+
+bool isEven(int a)
+{
+    if(a%2==0)
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    } 
+}
+
+int main()
+{
+    cout<<"Enter no. to check no. is even or odd"<<endl;
+    int num;
+    cin>>num;
+
+    bool isEvenVal = isEven(num);
+    if(isEvenVal)
+    {
+        cout<<"The number is even"<<endl;
+    }
+    else
+    {
+        cout<<"The number is not even"<<endl;
+    }  
+}

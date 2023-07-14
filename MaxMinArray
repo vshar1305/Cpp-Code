@@ -1,0 +1,42 @@
+#include<iostream>
+using namespace std;
+
+int getMax(int arr[],int size)
+{
+    int max=INT32_MIN;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]>max)
+        {
+        max=arr[i];
+        }
+    }
+    return max;
+}
+
+int getMin(int arr[],int size)
+{
+    int min=INT32_MAX;
+    for(int i=0;i<size;i++)
+    {
+        if(arr[i]<min)
+        {
+        min=arr[i];
+        }
+    }
+    return min;
+}
+
+int main()
+{
+    cout<<"Enter the  size and no. to find min and max"<<endl;
+    int arr[1000];
+    int size;
+    cin>>size;
+    for(int i=0;i<size;i++)
+    {
+        cin>>arr[i];
+    }
+    cout<<"Maximum value is "<<getMax(arr,size)<<endl;
+    cout<<"Minimum value is "<<getMin(arr,size)<<endl;
+}

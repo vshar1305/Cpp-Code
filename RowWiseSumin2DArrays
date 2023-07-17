@@ -37,7 +37,6 @@ int main()
         }
         cout<<endl;
     }
-
     cout<<"RowWise sum is "<<endl;
     isSum(arr,3,4);
 }

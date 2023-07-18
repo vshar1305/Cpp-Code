@@ -1,0 +1,28 @@
+#include<iostream>
+using namespace std;
+
+int factorial(int n)
+{
+    //base case 
+    if(n==0)
+    return true;
+
+    //recursive relation
+
+    int smallerProblem=factorial(n-1);
+    int biggerProblem=n*smallerProblem;
+
+    return biggerProblem;
+}
+
+int main()
+{
+    int n ,ans=0;
+    cout<<"Enter the number to find factorial"<<endl;
+    cin>>n;
+
+    ans=factorial(n);
+
+    cout<<"The factorial of given number is\n"<<ans<<endl;
+
+}

@@ -1,0 +1,30 @@
+#include<iostream>
+using namespace std;
+
+int power(int a,int n)
+{
+    //base case---->mandatory
+    if(n==0)
+    return 1;
+
+    //recursive relation---->mandatory
+    int smallerProblem=power(a,(n-1));
+    int biggerProblem=a*smallerProblem;
+
+    //mandatory
+    return biggerProblem;
+}
+
+int main()
+{
+    int a,n,ans=0;
+
+    cout<<"Enter the number you want to find power of"<<endl;
+    cin>>a;
+    cout<<"Enter the power of number you want to find power of"<<endl;
+    cin>>n;
+
+    ans=power(a,n);
+    cout<<"Answer is:\n"<<ans<<endl;
+
+}

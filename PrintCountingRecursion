@@ -1,0 +1,26 @@
+#include<iostream>
+using namespace std;
+
+void PrintCounting(int n)
+{
+    //base condition
+    if(n==0)
+    {
+    return;
+    }
+
+    //recurrence relation
+    PrintCounting(n-1);
+
+    //head recursion     
+    cout<<n<<endl;
+}
+
+int main()
+{
+    int n;
+    cout<<"Enter any number for counting"<<endl;
+    cin>>n;
+
+    PrintCounting(n);
+}

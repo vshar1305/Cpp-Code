@@ -5,7 +5,7 @@ int factorial(int n)
 {
     //base case 
     if(n==0)
-    return true;
+    return 1;
 
     //recursive relation
 

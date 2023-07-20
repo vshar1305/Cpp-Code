@@ -18,8 +18,7 @@ int getSum(int arr[],int size)
         int smallerProblem=getSum(arr+1,size-1);
         int sum=arr[0]+getSum(arr+1,size-1);
         return sum;
-    }
-    
+    }    
 }
 
 void Input(int arr[],int size)

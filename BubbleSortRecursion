@@ -1,0 +1,50 @@
+#include<iostream>
+using namespace std;
+
+void BubbleSortRecursion(int arr[],int size)
+{
+    //base case
+    if(size==0||size==1)
+    return;
+
+    //logic----------------->Sirf ith element ko uske order me pahuncha do mtlb lasrgest ko last me 
+    for(int i=0;i<size-1;i++)
+    {
+        if(arr[i]>arr[i+1])
+        {
+        swap(arr[i],arr[i+1]);
+        }
+    }
+    BubbleSortRecursion(arr,size-1);
+}
+
+void Input(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        cin>>arr[i];
+    }
+}
+
+void Print(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    cout<<arr[i]<<" ";
+}
+
+int main()
+{
+    int size;
+    cout<<"Enter the size of an array"<<endl;
+    cin>>size;
+    int arr[20];
+    cout<<"Enter an Array"<<endl;
+    Input(arr,size);
+    cout<<"The entered Array is"<<" "<<endl;
+    Print(arr,size);
+    cout<<endl;
+    BubbleSortRecursion(arr,size);
+    for(int i=0;i<size;i++)
+    cout<<arr[i]<<" ";
+
+}

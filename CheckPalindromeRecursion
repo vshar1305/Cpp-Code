@@ -1,0 +1,41 @@
+#include<iostream>
+#include<string>
+using namespace std;
+
+bool checkPalindrome(string arr,int i,int j)
+{
+    //base case
+    if(i>j)
+    {
+        return true ;
+    }
+    if(arr[i]!=arr[j])
+    {
+        return false;
+    // i++;---------------------->>this is also correct we can also increment or decrement here also 
+    // j--;
+    }
+    else
+    {
+    //recursive call
+    return checkPalindrome(arr,i+1,j-1);//------------->>always use pre increment or decrement or will stuck in infnite loop
+    }
+}
+
+int main()
+{
+    string arr="nayan";
+
+    bool isPalindrome=checkPalindrome(arr,0,arr.length()-1);
+
+    if(isPalindrome)
+    {
+        cout<<"The string is palindrome"<<endl;
+    }
+    else
+    {
+        cout<<"The string is not palindrome"<<endl;
+    }
+
+    return 0;
+}

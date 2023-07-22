@@ -1,0 +1,91 @@
+#include<iostream>
+using namespace std;
+
+int partition(int arr[],int start,int end)
+{
+    //take a pivot element
+    int pivot=arr[start];
+
+    //calculate count of elements smaller than pivot 
+    int count=0;
+    for(int i=start+1;i<=end;i++)
+    {
+        if(arr[i]<=pivot)
+        count++;
+    }
+
+    //right place for pivot element placement
+    int pivotIndex=start+count;
+    //place pivot by swapping as it is present at start position of array 
+    swap(arr[pivotIndex],arr[start]);
+
+    //now place all small part on right than pivot and large part on left
+    int i=start,j=end;
+    //pivot ke right tk && pivot ke bad left me end tk 
+    while(i<pivotIndex && j>pivotIndex)
+    {
+        //agrr sorted h sb right me to badhate jao i ko 
+        while(arr[i]<arr[pivotIndex])
+        {
+            i++;
+        }
+        //agrr sorted h sb left me to km krte jao j ko 
+        while(arr[j]>arr[pivotIndex])
+        {
+            j--;
+        }
+        //agrr sorted nhi h to swap kra do 
+        if(i<pivotIndex && j>pivotIndex)
+        {
+            swap(arr[i],arr[j]);
+        }
+    }
+    return pivotIndex;
+}
+
+void QuickSortRecursion(int arr[],int start,int end)
+{
+    //base case 
+    if(start>=end)
+    return;
+
+    //partition 
+    int p=partition(arr,start,end);
+
+    //left part
+    QuickSortRecursion(arr,start,p-1);
+
+    //right part
+    QuickSortRecursion(arr,p+1,end);
+}
+
+void Input(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        cin>>arr[i];
+    }
+}
+
+void Print(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    cout<<arr[i]<<" ";
+}
+
+int main()
+{
+    int size;
+    cout<<"Enter the size of an array"<<endl;
+    cin>>size;
+    int arr[20];
+    cout<<"Enter an Array"<<endl;
+    Input(arr,size);
+
+    QuickSortRecursion(arr,0,size-1);
+    for(int i=0;i<size;i++)
+    {
+    cout<<arr[i]<<" ";
+    }
+
+}
